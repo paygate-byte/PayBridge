@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #a8d3ff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            width: 350px;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .amount-field {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #e0f7fa; /* Light cyan for a billing feel */
+            border: 2px solid #008080; /* Teal border */
+            color: #004040; /* Dark teal text */
+            text-align: center;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function processPayment(event) {
+            event.preventDefault();
+            alert("Payment is being processed...");
+            window.location.href = "transaction_status.html"; // Redirect to Transaction Status Page
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Card Payment Details</h1>
+    <form onsubmit="processPayment(event)">
+        <label for="cardholderName">Cardholder Name:</label>
+        <input type="text" id="cardholderName" placeholder="Enter the name on the card" required>
+
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" placeholder="Enter your 16-digit card number" required>
+
+        <label for="expiry">Expiry Date (MM/YYYY):</label>
+        <input type="text" id="expiry" placeholder="MM/YYYY" required>
+
+        <label for="cvc">CVC:</label>
+        <input type="text" id="cvc" placeholder="CVC (3 digits)" required>
+
+        <label for="amount">Billing Amount (USD):</label>
+        <input type="number" id="amount" placeholder="Enter payment amount" class="amount-field" required>
+
+        <button class="submit-btn" type="submit">Submit Payment</button>
+    </form>
+
+</body>
+</html>

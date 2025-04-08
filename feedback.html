@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            width: 350px;
+        }
+        label, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            height: 120px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            transform: scale(1.1);
+        }
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+    <script>
+        function submitFeedback(event) {
+            event.preventDefault();
+            alert("Thank you for your feedback! Redirecting to Home Page...");
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000); // Redirect after 2 seconds
+        }
+    </script>
+</head>
+<body>
+
+    <h1>We Value Your Feedback</h1>
+    <form onsubmit="submitFeedback(event)">
+        <label for="feedback">Optional Feedback:</label>
+        <textarea id="feedback" placeholder="Tell us about your experience..."></textarea>
+
+        <button class="submit-btn" type="submit">Submit & Return Home</button>
+    </form>
+
+    <div class="disclaimer">
+        <strong>Disclaimer:</strong> Providing feedback is optional. Your responses help us improve our services, but skipping feedback will not impact your experience. Submitted feedback is used for evaluation purposes only.
+    </div>
+
+</body>
+</html>

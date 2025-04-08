@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a8d3ff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .thank-message {
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            color: #8B0000;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        .confirmation-text {
+            font-size: 20px;
+            color: #004040;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .next-btn {
+            padding: 12px 20px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .next-btn:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+    <script>
+        function EnterReceiverDetails() {
+            window.location.href = "receiver_details.html"; // Redirect to Account Details page
+        }
+    </script>
+</head>
+<body>
+
+    <div class="thank-message">
+        Thank you for completing your transaction!
+    </div>
+
+    <div class="confirmation-text">
+        Your confirmation will be sent to your email.<br>
+        We appreciate doing business with you!
+    </div>
+
+    <button class="next-btn" onclick="EnterReceiverDetails()">EnterReceiverDetails</button>
+
+</body>
+</html>

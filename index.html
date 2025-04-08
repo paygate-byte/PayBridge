@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PayBridge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a8d3ff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .welcome-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00254d;
+            margin-bottom: 20px;
+        }
+        .paybridge-name {
+            font-size: 50px;
+            font-weight: bold;
+            color: pink;
+            text-shadow: 2px 2px 8px #9e1414;
+            margin-bottom: 10px;
+        }
+        .trusted-text {
+            font-size: 24px;
+            font-style: italic;
+            font-weight: bold;
+            color: maroon;
+            margin-bottom: 30px;
+        }
+        .phone-input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        select, input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            width: 250px;
+        }
+        .proceed-btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            background-color: cyan;
+            color: #00254d;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .proceed-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function proceedToPaymentOptions(event) {
+            event.preventDefault();
+            const phoneNumber = document.getElementById("phoneNumber").value.trim();
+            if (phoneNumber === "") {
+                alert("Please enter your phone number to proceed.");
+                return;
+            }
+            window.location.href = "payment_option.html";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="welcome-text">Thank you for choosing</div>
+    <div class="paybridge-name">PayBridge</div>
+    <div class="trusted-text">A Trusted Payment Gateway</div>
+
+    <form class="phone-input-container" onsubmit="proceedToPaymentOptions(event)">
+        <select id="countryCode">
+            <option value="+1">USA (+1)</option>
+            <option value="+44">UK (+44)</option>
+            <option value="+254">Kenya (+254)</option>
+            <option value="+61">Australia (+61)</option>
+            <option value="+234">Nigeria (+234)</option>
+            <option value="+233">Ghana (+233)</option>
+            <option value="+49">Germany (+49)</option>
+            <option value="+34">Spain (+34)</option>
+            <option value="+1">Canada (+1)</option>
+        </select>
+        <input type="text" id="phoneNumber" placeholder="Enter your phone number" required>
+        <button class="proceed-btn" type="submit">Proceed</button>
+    </form>
+
+</body>
+</html>

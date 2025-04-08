@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a8d3ff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            width: 300px;
+        }
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function submitAccountDetails(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            window.location.href = "feedback.html"; // Redirect to Feedback Page
+        }
+    </script>
+</head>
+<body>
+
+    <h1></h1>
+    <form onsubmit="submitAccountDetails(event)">
+        <label for="accountHolderName">Account Holder Name:</label>
+        <input type="text" id="accountHolderName" placeholder="Enter account holder name" required>
+
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" id="accountNumber" placeholder="Enter account number" required>
+
+        <label for="achRouting">ACH Routing Number:</label>
+        <input type="text" id="achRouting" placeholder="Enter ACH routing number" required>
+
+        <label for="accountType">Account Type:</label>
+        <select id="accountType" required>
+            <option value="" disabled selected>Select Account Type</option>
+            <option value="checking">Checking</option>
+            <option value="savings">Savings</option>
+        </select>
+
+        <button class="submit-btn" type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

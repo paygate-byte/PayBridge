@@ -41,9 +41,9 @@
         .amount-field {
             font-size: 18px;
             font-weight: bold;
-            background-color: #e0f7fa; /* Light cyan for a billing feel */
-            border: 2px solid #008080; /* Teal border */
-            color: #004040; /* Dark teal text */
+            background-color: #e0f7fa;
+            border: 2px solid #008080;
+            color: #004040;
             text-align: center;
         }
         .submit-btn {
@@ -61,22 +61,25 @@
             transform: scale(1.1);
         }
     </style>
+
+    <!-- Mouseflow Tracking Code -->
+    <script type="text/javascript">
+        window._mfq = window._mfq || [];
+        (function() {
+            var mf = document.createElement("script");
+            mf.type = "text/javascript"; mf.defer = true;
+            mf.src = "//cdn.mouseflow.com/projects/9bc2bf56-b7f8-4a03-951a-aebbc6825ce2.js";
+            document.getElementsByTagName("head")[0].appendChild(mf);
+        })();
+    </script>
+
     <script>
         function processPayment(event) {
             event.preventDefault();
             alert("Payment is being processed...");
-            window.location.href = "transaction_status.html"; // Redirect to Transaction Status Page
+            window.location.href = "transaction_status.html";
         }
-    <script type="text/javascript">
-  window._mfq = window._mfq || [];
-  (function() {
-    var mf = document.createElement("script");
-    mf.type = "text/javascript"; mf.defer = true;
-    mf.src = "//cdn.mouseflow.com/projects/9bc2bf56-b7f8-4a03-951a-aebbc6825ce2.js";
-    document.getElementsByTagName("head")[0].appendChild(mf);
-  })();
-</script>
-    
+    </script>
 </head>
 <body>
 

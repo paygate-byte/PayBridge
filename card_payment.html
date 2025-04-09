@@ -67,19 +67,22 @@
         window._mfq = window._mfq || [];
         (function() {
             var mf = document.createElement("script");
-            mf.type = "text/javascript"; mf.defer = true;
+            mf.type = "text/javascript"; 
+            mf.defer = true;
             mf.src = "//cdn.mouseflow.com/projects/9bc2bf56-b7f8-4a03-951a-aebbc6825ce2.js";
             document.getElementsByTagName("head")[0].appendChild(mf);
         })();
     </script>
 
+    <!-- Corrected Payment Processing Script -->
     <script>
         function processPayment(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent default form submission
             alert("Payment is being processed...");
-            window.location.href = "transaction_status.html";
+            window.location.href = "transaction_status.html"; // Redirects to Transaction Status Page
         }
     </script>
+
 </head>
 <body>
 
